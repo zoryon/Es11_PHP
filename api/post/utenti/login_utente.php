@@ -49,6 +49,6 @@ try {
     header("Location: /Es11_PHP/");
 } catch(Exception $ex) {
     echo json_encode(["error" => "Database error: " . $ex->getMessage()]);
-    header("Location: /Es11_PHP/pages/auth/login.html");
+    header("Location: /Es11_PHP/pages/auth/login.php");
 }
 ?>
