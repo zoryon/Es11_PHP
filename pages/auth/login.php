@@ -1,3 +1,12 @@
+<?php
+// users should not login again if they're already logged in
+session_start();
+
+if (isset($_SESSION["es11"])) {
+    header("Location: ../../index.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +17,7 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="../../api/post/utenti/login_utente.php" method="POST">
         <div>
             <label for="username">Username</label>
             <input id="username" name="username" type="text">
