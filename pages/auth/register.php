@@ -1,5 +1,5 @@
 <?php
-// users should not login again if they're already logged in
+// users should not register again if they're already logged in
 session_start();
 
 if (isset($_SESSION["es11"])) {
@@ -14,11 +14,11 @@ if (isset($_SESSION["es11"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
 </head>
 
 <body>
-    <form action="../../api/post/utenti/login_utente.php" method="POST">
+    <form action="../../api/post/utenti/register_utente.php" method="POST">
         <div>
             <label for="username">Username</label>
             <input id="username" name="username" type="text">

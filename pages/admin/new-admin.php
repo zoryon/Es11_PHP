@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION["es11"]) || $_SESSION["es11"]["isAdmin"] === false) {
     // 404 code -> Not Found -> instead of a 303, 'cause an idea of the admin's endpoints should not be given to everyone
+    http_response_code(404);
     header("Location: ../not-found.html");
 }
 ?>
