@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <form action="../../api/post/utenti.php" method="POST">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <div>
+            <label for="user_type">User type for login</label>
+            <div>
+                <div>
+                    <input id="admin_user" name="user_type" type="radio" value="admin">
+                    <label for="admin_user">admin</label>
+                </div>
+                <div>
+                    <input id="normal_user" name="user_type" type="radio" value="utenti">
+                    <label for="normal_user">normal user</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit">
+            send
+        </button>
+    </form>
+</body>
+
+</html>

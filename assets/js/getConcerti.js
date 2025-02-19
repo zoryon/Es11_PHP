@@ -1,5 +1,5 @@
 function getConcerti() {
-    fetch("/school/Es11_PHP/api/get/concerti.php")
+    fetch("/Es11_PHP/api/get/concerti.php")
         .then(res => res.json())
         .then(data => {
             buildConcertiTable(data);
