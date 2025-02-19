@@ -22,4 +22,6 @@ try {
 } finally {
     $conn->close();
 }
+
+exit();
 ?>

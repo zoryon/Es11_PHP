@@ -49,7 +49,11 @@ try {
 
     echo json_encode(["success" => "Admin role was given successfully"]);
 } catch(Exception $ex) {
-    echo json_encode(["error" => "Database error: " . $ex->getMessage()]);
     header("Location: /Es11_PHP/pages/admin/new-admin.html");
+    echo json_encode(["error" => "Database error: " . $ex->getMessage()]);
+} finally {
+    $conn->close();
 }
+
+exit();
 ?>

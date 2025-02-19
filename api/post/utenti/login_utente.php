@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json");
+header("Location: /Es11_PHP/");
 
 include "../../db/conf.php";
 
@@ -35,6 +36,7 @@ try {
     $_SESSION["es11"] = [
         "id" => $user["id"],
         "username" => $user["username"],
+        "isAdmin" => false
     ];
 
     // automatically verify whether user is an admin or not
@@ -46,9 +48,12 @@ try {
     }
     
     echo json_encode(["success" => "User logged successfully"]);
-    header("Location: /Es11_PHP/");
 } catch(Exception $ex) {
-    echo json_encode(["error" => "Database error: " . $ex->getMessage()]);
     header("Location: /Es11_PHP/pages/auth/login.php");
+    echo json_encode(["error" => "Database error: " . $ex->getMessage()]);
+} finally {
+    $conn->close();
 }
+
+exit();
 ?>
