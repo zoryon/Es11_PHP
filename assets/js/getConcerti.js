@@ -10,24 +10,28 @@ function buildConcertiTable(array) {
     const wrapper = document.getElementById("concertiWrapper");
     wrapper.innerHTML = "";
 
-    array.forEach(concerto => {
-        const row = document.createElement("div");
-        const text = document.createElement("span");
-        const button = document.createElement("button");
+    if(array.length > 0) {
+        const headerRow = document.createElement("tr");
+        const headers = Object.keys(array[0]).filter(key => key !== "id");
+        headers.forEach(key => {
+            const header = document.createElement("th");
+            header.textContent = key;
+            headerRow.appendChild(header);
+        });
+        wrapper.appendChild(headerRow);
+    }
 
-        // button.textContent = "edit";
-        
-        let ans = "";
+    array.forEach(concerto => {
+        const row = document.createElement("tr");
 
         const keys = Object.keys(concerto).filter(key => key !== "id");
         keys.forEach(key => {
-            console.log(key)
-            ans += concerto[key] + " ";
+            const cell = document.createElement("td");
+            cell.textContent = concerto[key];
+
+            row.appendChild(cell);
         });
-
-        text.textContent = ans;
-
-        row.append(text, button);
+    
         wrapper.appendChild(row);
     });
 }
