@@ -51,7 +51,7 @@ try {
     }
     
     $res->setStatusCode(200)
-        ->redirect("/Es11_PHP/index.html")
+        ->redirect("/Es11_PHP/index.php")
         ->send();
     echo json_encode(["success" => "User logged successfully"]);
 } catch(Exception $ex) {

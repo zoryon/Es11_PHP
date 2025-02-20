@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4vh;
+}
+
+/* navbar */
+nav {
+    width: 100vw;
+    height: 45px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    font-size: large;
+    border-bottom: 1px solid black;
+}
+
+nav ul {
+    display: flex;
+    gap: 1vw;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+/* tables */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+/* forms */
+form {
+    min-width: 300px;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: medium;
+}
+
+form input {
+    width: 100%;
+    height: 28px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+form button {
+    width: 68%;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
